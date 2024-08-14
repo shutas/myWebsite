@@ -73,7 +73,28 @@
   <br><br>
   <p>Email: shutas [at] umich [dot] edu <br>
   GitHub: <a href="https://github.com/shutas" target="_blank">@shutas</a></p>
-  <br>
-  <p>Last updated: August 1st, 2024</p>
+  <br><br>
+  <div id = "lastUpdated"></div>
+  <script>
+    const lastModifiedDate = new Date(document.lastModified);
+    const year = lastModifiedDate.getFullYear();
+    const month = lastModifiedDate.toLocaleString("default", { month: "long" });
+    const day = lastModifiedDate.getDate();
+    const nthNumber = (number) => {
+      if (number > 3 && number < 21) return "th";
+      switch (number % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    };
+    const lastModifiedDateString = `${month} ${day}${nthNumber(day)}, ${year}`;
+    document.getElementById("lastUpdated").innerHTML = "Last updated: " + lastModifiedDateString;
+  </script>
   </body>
   </html>
