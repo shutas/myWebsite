@@ -37,13 +37,31 @@
       max-width: 48em;
       margin: 15 auto;
     }
+    #marqueecontent {
+      max-width: 20em;
+      margin: 0 0 15 0;
+      align: left;
+    }
   </style>	
 </head>
 
 <body>
 <div id="maincontent" style="margin-top:70px">
   <h2>Shuta Suzuki</h2>
-  <p><b>Engineer. White-hat hacker. Aspiring entrepreneur.</b></p>
+  <script>
+    const changeMarquee = () => {
+      if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1"><b>Engineer.</b></marquee>') {
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>White-hat hacker.</b></marquee>';
+      }
+      else if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1"><b>White-hat hacker.</b></marquee>') {
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>Aspiring entrepreneur.</b></marquee>';
+      } else {
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>Engineer.</b></marquee>';
+      }
+    }
+    setInterval(changeMarquee, 7000);
+  </script>
+  <div id="marqueecontent"><marquee loop="1"><b>Engineer.</b></marquee></div>
   <br>
   <h4>Professional Career</h4>
   <ul>
