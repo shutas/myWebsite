@@ -26,13 +26,13 @@ const handler = async (event) => {
     const response = await fetch(url);
     const HTMLtext = await response.text();
 
-    const startIndex = HTMLtext.lastIndexOf('>', HTMLtext.indexOf('</relative-time>')) + 1;
-    const endIndex = HTMLtext.indexOf('</relative-time>');
-    const lastUpdatedDateStr = HTMLtext.slice(startIndex, endIndex);
-    
+    const startIndex = HTMLtext.indexOf('Commits on') + 11;
+    const lastUpdatedDateStr = HTMLtext.slice(startIndex, startIndex + 12);
+    console.log(lastUpdatedDateStr);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ value: modifyDateString(lastUpdatedDateStr) }),
+      body: JSON.stringify({ value: modifyDateString(lastUpdatedDateStr)}),
     }
   } catch(error) {
     const errorMessage = "oops, something went very wrong... please try again later";
