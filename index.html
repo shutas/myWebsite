@@ -50,18 +50,18 @@
   <h2>Shuta Suzuki</h2>
   <script>
     const changeMarquee = () => {
-      if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1"><b>Engineer.</b></marquee>') {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>White-hat hacker.</b></marquee>';
+      if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee>') {
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>White-hat hacker.</b></marquee>';
       }
-      else if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1"><b>White-hat hacker.</b></marquee>') {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>Aspiring entrepreneur.</b></marquee>';
+      else if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>White-hat hacker.</b></marquee>') {
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Aspiring entrepreneur.</b></marquee>';
       } else {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1"><b>Engineer.</b></marquee>';
+        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee>';
       }
     }
     setInterval(changeMarquee, 7000);
   </script>
-  <div id="marqueecontent"><marquee loop="1"><b>Engineer.</b></marquee></div>
+  <div id="marqueecontent"><marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee></div>
   <br>
   <h4>Professional Career</h4>
   <ul>
