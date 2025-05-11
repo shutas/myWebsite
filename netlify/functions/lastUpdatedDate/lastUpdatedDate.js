@@ -29,8 +29,6 @@ const handler = async (event) => {
     const startIndex = HTMLtext.indexOf('Commits on') + 11;
     const lastUpdatedDateStr = HTMLtext.slice(startIndex, startIndex + 12);
 
-    window.localStorage.setItem("myCat", "Tom");
-
     return {
       statusCode: 200,
       body: JSON.stringify({ value: modifyDateString(lastUpdatedDateStr)}),
