@@ -36,6 +36,8 @@ Welcome to my little corridor on the internet.
       padding: 0 10px;
       margin: 50px auto;
       max-width: 800px;
+      background-color: var(--background-color);
+      color: var(--text-color);
     }
     ul {
       margin: 0;
@@ -45,7 +47,7 @@ Welcome to my little corridor on the internet.
       margin-bottom: 10px;
     }
     a {
-      color: dodgerblue;
+      color: var(--linktext-color);
     }
     #maincontent {
       max-width: 48em;
@@ -54,7 +56,16 @@ Welcome to my little corridor on the internet.
     #marqueecontent {
       max-width: 16em;
       margin: 0 0 15 0;
-      align: left;
+    }
+    :root {
+      --text-color: black;
+      --background-color: white;
+      --linktext-color: dodgerblue;
+    }
+    :root:has(#dark-mode:checked) {
+      --text-color: white;
+      --background-color: black;
+      --linktext-color: darkorange;
     }
   </style>	
 </head>
@@ -104,6 +115,9 @@ Welcome to my little corridor on the internet.
   <br><br>
   <p>Email: shutas [at] umich [dot] edu <br>
   GitHub: <a href="https://github.com/shutas" target="_blank">@shutas</a></p>
+  <br><br>
+  <input type="checkbox" id="dark-mode" />
+  <label for="dark-mode">Dark mode</label>
   <br><br>
   <div>Last updated: <span id="lastUpdatedDate">loading...</span></div>
   <script>
