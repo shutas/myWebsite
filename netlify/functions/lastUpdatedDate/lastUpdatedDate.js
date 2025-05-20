@@ -1,5 +1,3 @@
-require('./.netlify/functions/main');
-
 const url = 'https://github.com/shutas/myWebsite/commits/main/';
 
 const modifyDateString = (oldDateString) => {
