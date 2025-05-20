@@ -1,4 +1,4 @@
-require('./.netlify/functions/main);
+require('./.netlify/functions/main');
 
 const url = 'https://github.com/shutas/myWebsite/commits/main/';
 
