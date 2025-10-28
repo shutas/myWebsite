@@ -1,0 +1,38 @@
+body { 
+  line-height: 1.4;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 50px auto;
+  max-width: 800px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+ul {
+  margin: 0;
+}
+h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+a {
+  color: var(--linktext-color);
+}
+#maincontent {
+  max-width: 48em;
+  margin: 15 auto;
+}
+#marqueecontent {
+  max-width: 16em;
+  margin: 0 0 15 0;
+}
+:root {
+  --text-color: black;
+  --background-color: white;
+  --linktext-color: dodgerblue;
+}
+:root:has(#dark-mode:checked) {
+  --text-color: white;
+  --background-color: black;
+  --linktext-color: darkorange;
+}
+

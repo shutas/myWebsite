@@ -38,62 +38,11 @@ Welcome to my little corridor on the internet.
   <meta property="og:description" content="Official website for Shuta Suzuki: an engineer, security enthusiast, and aspiring entrepreneur.">
   <meta property="og:image" content="https://shutasuzuki.com/assets/og-preview.jpg">
 
-  <style>
-    body { 
-      line-height: 1.4;
-      font-size: 16px;
-      padding: 0 10px;
-      margin: 50px auto;
-      max-width: 800px;
-      background-color: var(--background-color);
-      color: var(--text-color);
-    }
-    ul {
-      margin: 0;
-    }
-    h4 {
-      font-weight: normal;
-      margin-bottom: 10px;
-    }
-    a {
-      color: var(--linktext-color);
-    }
-    #maincontent {
-      max-width: 48em;
-      margin: 15 auto;
-    }
-    #marqueecontent {
-      max-width: 16em;
-      margin: 0 0 15 0;
-    }
-    :root {
-      --text-color: black;
-      --background-color: white;
-      --linktext-color: dodgerblue;
-    }
-    :root:has(#dark-mode:checked) {
-      --text-color: white;
-      --background-color: black;
-      --linktext-color: darkorange;
-    }
-  </style>	
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <div id="maincontent" style="margin-top:70px">
   <h2>Shuta Suzuki</h2>
-  <script>
-    const changeMarquee = () => {
-      if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee>') {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Security enthusiast.</b></marquee>';
-      }
-      else if (document.getElementById("marqueecontent").innerHTML === '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Security enthusiast.</b></marquee>') {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Aspiring entrepreneur.</b></marquee>';
-      } else {
-        document.getElementById("marqueecontent").innerHTML = '<marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee>';
-      }
-    }
-    setInterval(changeMarquee, 7000);
-  </script>
   <div id="marqueecontent"><marquee loop="1" onmouseout="this.start();" onmouseover="this.stop();"><b>Engineer.</b></marquee></div>
   <br>
   <h4>Professional Career</h4>
@@ -129,14 +78,8 @@ Welcome to my little corridor on the internet.
   <label for="dark-mode">Dark mode</label>
   <br><br>
   <div>Last updated: <span id="lastUpdatedDate">loading...</span></div>
-  <script>
-    fetch('./.netlify/functions/lastUpdatedDate')
-    .then(response => response.json())
-    .then(response => {
-      document.getElementById("lastUpdatedDate").innerHTML = response.value;
-    });
-  </script>
   <br>
   <p style="color:var(--background-color)">Hint: you gotta watch out for the headers like it's your first time...</p>
+  <script src="./main.js"></script>
 </body>
 </html>
