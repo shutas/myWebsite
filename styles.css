@@ -57,6 +57,7 @@ body.dark-mode {
   border: 2px solid var(--text-color);
   border-radius: 4px;
   cursor: pointer;
+  font-family: inherit;
   font-size: 14px;
   transition: all 0.3s ease;
   z-index: 1000;
