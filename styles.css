@@ -25,6 +25,14 @@ a {
   max-width: 16em;
   margin: 0 0 15 0;
 }
+#cursor {
+  animation: blink 1s infinite;
+  font-size: 1.2em;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 :root {
   --text-color: black;
   --background-color: white;
