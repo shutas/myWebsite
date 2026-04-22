@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iReflection — Daily Handwriting Journal for iPad</title>
+  <meta name="description" content="iReflection is a private, on-device handwriting journal for iPad. Write with Apple Pencil, track your streak, and keep every entry on-device — no account, no cloud, no analytics.">
+  <meta name="keywords" content="iReflection, iPad journal, handwriting journal, Apple Pencil, daily journal, private journal, on-device, iPadOS app">
+  <link rel="canonical" href="https://shutasuzuki.com/iReflection">
+  <link rel="shortcut icon" href="../assets/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:url" content="https://shutasuzuki.com/iReflection">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="iReflection — Daily Handwriting Journal for iPad">
+  <meta property="og:site_name" content="iReflection">
+  <meta property="og:description" content="A private handwriting journal for iPad. Write with Apple Pencil, track your streak, and keep every entry on-device.">
+  <meta property="og:image" content="https://shutasuzuki.com/assets/og-preview.jpg">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "iReflection",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iPadOS 18+",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Shuta Suzuki", "url": "https://shutasuzuki.com" },
+      "url": "https://shutasuzuki.com/iReflection"
+    }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #fafafa;
+      --fg: #1c1c1e;
+      --muted: #6c6c70;
+      --rule: #d1d1d6;
+      --accent: #1d3557;
+      --card: #ffffff;
+      --card-border: #e5e5ea;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000;
+        --fg: #f2f2f7;
+        --muted: #8e8e93;
+        --rule: #2c2c2e;
+        --accent: #a7c5f0;
+        --card: #1c1c1e;
+        --card-border: #2c2c2e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .nav a { color: var(--muted); }
+    .nav a:hover { color: var(--accent); }
+
+    .hero {
+      text-align: center;
+      padding: 32px 0 48px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+    .tagline {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.45;
+    }
+    .meta {
+      display: inline-flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .meta span { white-space: nowrap; }
+    .meta .dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: var(--muted);
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 4px;
+    }
+
+    section { padding: 48px 0; border-bottom: 1px solid var(--rule); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin: 0 0 20px;
+    }
+
+    .lead { font-size: 18px; line-height: 1.6; color: var(--fg); margin: 0 0 16px; }
+    .lead + .lead { margin-top: 16px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .feature h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      letter-spacing: -0.005em;
+    }
+    .feature p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .privacy-callout {
+      background: transparent;
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 24px 0 8px;
+    }
+    .privacy-callout strong { color: var(--accent); }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .support-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: var(--fg);
+    }
+    .support-item p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 36px; }
+      .tagline { font-size: 18px; }
+      main { padding: 32px 20px 64px; }
+      section { padding: 36px 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="nav" aria-label="Primary">
+      <a href="https://shutasuzuki.com">&larr; shutasuzuki.com</a>
+      <a href="./privacy-policy.html">Privacy</a>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">For iPad &middot; Apple Pencil</p>
+      <h1>iReflection</h1>
+      <p class="tagline">A private daily handwriting journal for your iPad. Pick up your Apple Pencil and write — that's it.</p>
+      <div class="meta" aria-label="App facts">
+        <span>iPadOS 18+</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>No account</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>No cloud</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>No analytics</span>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>Just you, a clean page, and the day's date</h2>
+      <p class="lead">iReflection turns your iPad into a private handwritten journal. There are no prompts, no templates, and no social features &mdash; the same way you would write on paper, but with the clarity and permanence of a dedicated digital canvas.</p>
+      <p class="lead">Every entry is saved automatically and organized by date. A calendar view shows your writing history at a glance, with filled-in days and a running streak that gently encourages you to keep the habit going.</p>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Write with Apple Pencil</h3>
+          <p>A clean PencilKit canvas rendered crisply at any zoom level. Portrait or landscape, blank, ruled, or dotted.</p>
+        </div>
+        <div class="feature">
+          <h3>Daily streak</h3>
+          <p>A calendar shows every day you've written and a running streak you can protect.</p>
+        </div>
+        <div class="feature">
+          <h3>On-device only</h3>
+          <p>Entries live in the app's sandbox on your iPad. No server, no sync, no account.</p>
+        </div>
+        <div class="feature">
+          <h3>Daily reminders</h3>
+          <p>Optional local notification if you want a nudge at a time you choose.</p>
+        </div>
+        <div class="feature">
+          <h3>Light &amp; Dark Mode</h3>
+          <p>Semantic iPadOS colors that adapt automatically. Beautiful either way.</p>
+        </div>
+        <div class="feature">
+          <h3>Accessible</h3>
+          <p>Full VoiceOver support and Dynamic Type throughout the interface.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy, built in</h2>
+      <div class="privacy-callout">
+        <p class="lead" style="margin:0"><strong>Short version:</strong> iReflection does not collect, transmit, or share any personal data. Everything you write stays on your iPad.</p>
+      </div>
+      <p class="lead">No accounts. No sign-in. No analytics SDKs. No advertising identifiers. No network requests. Read the full <a href="./privacy-policy.html">privacy policy</a>.</p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p class="lead">Questions, bug reports, or feedback? I'd love to hear from you.</p>
+      <div class="support-grid">
+        <div class="support-item">
+          <h3>Contact</h3>
+          <p><a href="https://shutasuzuki.com">shutasuzuki.com</a></p>
+        </div>
+        <div class="support-item">
+          <h3>Developer</h3>
+          <p>Shuta Suzuki</p>
+        </div>
+        <div class="support-item">
+          <h3>Platform</h3>
+          <p>iPadOS 18 or later</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Shuta Suzuki</span>
+      <span><a href="./privacy-policy.html">Privacy Policy</a> &middot; <a href="https://shutasuzuki.com">shutasuzuki.com</a></span>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iReflection — Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #fafafa;
+      --fg: #1c1c1e;
+      --muted: #6c6c70;
+      --rule: #d1d1d6;
+      --accent: #1d3557;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000;
+        --fg: #f2f2f7;
+        --muted: #8e8e93;
+        --rule: #2c2c2e;
+        --accent: #a7c5f0;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 40px 0 12px;
+    }
+    p, li { color: var(--fg); }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    .summary {
+      background: transparent;
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      margin: 24px 0 32px;
+      color: var(--fg);
+    }
+    .summary strong { color: var(--accent); }
+    footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    a { color: var(--accent); }
+    .topnav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .topnav a { color: var(--muted); }
+    .topnav a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="topnav" aria-label="Primary">
+      <a href="./">&larr; iReflection</a>
+      <a href="https://shutasuzuki.com">shutasuzuki.com</a>
+    </nav>
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">iReflection — Daily Handwriting Journal</p>
+      <p class="subtitle">Last updated: April 21, 2026</p>
+    </header>
+
+    <div class="summary">
+      <p><strong>Short version:</strong> iReflection does not collect, transmit, or share any personal data. Everything you write stays on your iPad.</p>
+    </div>
+
+    <h2>Data we collect</h2>
+    <p><strong>None.</strong> iReflection does not collect, request, or transmit any personal information, identifiers, usage metrics, diagnostics, or content of any kind.</p>
+
+    <h2>Data stored on your device</h2>
+    <p>The app stores the following locally on your iPad, inside the app's sandboxed container managed by iPadOS:</p>
+    <ul>
+      <li>Your handwritten journal entries (stored as Apple PencilKit <code>.pkdrawing</code> files).</li>
+      <li>Entry metadata such as the date each entry was created and modified.</li>
+      <li>Your in-app preferences (canvas background, orientation, appearance mode, reminder settings).</li>
+    </ul>
+    <p>This data is never transmitted off your device by iReflection. It is only accessible to you, and is included in your iCloud device backups and local iTunes/Finder backups according to your iPadOS settings — the app itself has no awareness of, or access to, those backups.</p>
+
+    <h2>Third-party services</h2>
+    <p><strong>None.</strong> iReflection does not integrate with any third-party SDKs, analytics providers, advertising networks, crash reporters, or cloud services. The app does not make network requests.</p>
+
+    <h2>Analytics</h2>
+    <p><strong>None.</strong> We do not collect usage analytics, performance metrics, or any form of telemetry.</p>
+
+    <h2>Tracking</h2>
+    <p><strong>None.</strong> iReflection does not track you across apps or websites, and does not use the iOS Advertising Identifier (IDFA) or any similar identifier.</p>
+
+    <h2>Children's privacy</h2>
+    <p>iReflection is rated 4+ and does not collect any data from any user, including children. The app is safe for users of any age to use without parental consent to data collection (because there is no data collection).</p>
+
+    <h2>Your rights</h2>
+    <p>Because iReflection never collects your data, there is nothing for us to export, correct, or delete on our end. You can delete all data created by iReflection at any time by deleting the app from your iPad, which removes the app's sandbox container and all its contents.</p>
+
+    <h2>Permissions requested</h2>
+    <p>iReflection requests the following iPadOS permissions, all of which are optional and used only for the feature they enable:</p>
+    <ul>
+      <li><strong>Notifications</strong> — used only to deliver the daily reminder you schedule in Settings. Notifications are scheduled locally on-device via <code>UNUserNotificationCenter</code>; no content is sent to Apple's push servers.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the updated version will be published at the same URL with a new "Last updated" date. Because iReflection does not collect data, any future changes will, at most, clarify existing practices.</p>
+
+    <h2>Developer</h2>
+    <p>iReflection is developed and maintained by Shuta Suzuki. For support and more information, visit <a href="https://shutasuzuki.com/iReflection">shutasuzuki.com/iReflection</a>.</p>
+
+    <footer>
+      <p>&copy; 2026 Shuta Suzuki. This policy applies to the iReflection iPadOS app distributed via the App Store.</p>
+    </footer>
+  </main>
+</body>
+</html>
