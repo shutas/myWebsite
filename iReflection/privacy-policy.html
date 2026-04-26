@@ -7,22 +7,27 @@
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #fafafa;
-      --fg: #1c1c1e;
-      --muted: #6c6c70;
-      --rule: #d1d1d6;
-      --accent: #1d3557;
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #d2d2d7;
+      --accent: #0071e3;
+      --nav-bg: rgba(255, 255, 255, 0.72);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #000;
-        --fg: #f2f2f7;
-        --muted: #8e8e93;
+        --bg: #000000;
+        --fg: #f5f5f7;
+        --muted: #86868b;
         --rule: #2c2c2e;
-        --accent: #a7c5f0;
+        --accent: #2997ff;
+        --nav-bg: rgba(0, 0, 0, 0.72);
       }
     }
     * { box-sizing: border-box; }
+    html {
+      scroll-padding-top: 56px;
+    }
     html, body {
       margin: 0;
       padding: 0;
@@ -33,6 +38,57 @@
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
     }
+    body { padding-top: 48px; }
+
+    /* ---------- Nav (shared with landing page) ---------- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 22px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--fg);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .nav-brand:hover { text-decoration: none; }
+    .nav-brand img {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+    .nav-actions {
+      display: inline-flex;
+      gap: 22px;
+      align-items: center;
+    }
+    .nav-actions a {
+      color: var(--fg);
+      font-weight: 400;
+      text-decoration: none;
+    }
+    .nav-actions a:hover { color: var(--accent); text-decoration: none; }
+
     main {
       max-width: 720px;
       margin: 0 auto;
@@ -79,24 +135,26 @@
       font-size: 14px;
     }
     a { color: var(--accent); }
-    .topnav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 32px;
+
+    @media (max-width: 640px) {
+      .nav-actions { gap: 14px; }
     }
-    .topnav a { color: var(--muted); }
-    .topnav a:hover { color: var(--accent); }
   </style>
 </head>
 <body>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="./">
+        <img src="../assets/icon.png" alt="">
+        <span>iReflection</span>
+      </a>
+      <div class="nav-actions">
+        <a href="./privacy-policy.html">Privacy</a>
+        <a href="https://apps.apple.com/us/app/ireflection-journal/id6763083366" target="_blank" rel="noopener noreferrer">Download</a>
+      </div>
+    </div>
+  </nav>
   <main>
-    <nav class="topnav" aria-label="Primary">
-      <a href="./">&larr; iReflection</a>
-      <a href="https://shutasuzuki.com">shutasuzuki.com</a>
-    </nav>
     <header>
       <h1>Privacy Policy</h1>
       <p class="subtitle">iReflection — Daily Handwriting Journal</p>
